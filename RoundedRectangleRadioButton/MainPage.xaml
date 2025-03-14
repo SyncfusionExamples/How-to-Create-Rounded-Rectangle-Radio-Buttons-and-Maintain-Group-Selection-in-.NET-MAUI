@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+              xmlns:buttons="clr-namespace:Syncfusion.Maui.Buttons;assembly=Syncfusion.Maui.Buttons"
+             xmlns:local="clr-namespace:RoundedRectangleRadioButton"
+             x:Class="RoundedRectangleRadioButton.MainPage">
+
+
+    <ContentPage.Resources>
+        <Style x:Key="SettingsRoundRect" TargetType="Border">
+            <Setter Property="WidthRequest" Value="300"/>
+            <Setter Property="StrokeShape" Value="RoundRectangle 10"/>
+        </Style>
+    </ContentPage.Resources>
+    
+    <StackLayout>
+      <buttons:SfRadioGroupKey x:Name="RadioGroupKey" Spacing="5" >
+            <Border  Style="{StaticResource SettingsRoundRect}">
+                <buttons:SfRadioButton Text="Style 1"  Value="1" GroupKey="{Binding Source={x:Reference RadioGroupKey}}"/>
+            </Border>
+          
+            <Border Style="{StaticResource SettingsRoundRect}" >
+                <buttons:SfRadioButton Text="Style 2" Value="2" GroupKey="{Binding Source={x:Reference RadioGroupKey}}"/>
+            </Border>
+
+            <Border Style="{StaticResource SettingsRoundRect}" >
+                <buttons:SfRadioButton Text="Style 3" Value="3" GroupKey="{Binding Source={x:Reference RadioGroupKey}}"/>
+            </Border>
+        </buttons:SfRadioGroupKey>
+    </StackLayout>
+
+</ContentPage>
